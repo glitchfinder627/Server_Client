@@ -25,18 +25,18 @@ class ThreadedTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
 
 if __name__ == "__main__":
 	
-	ON_HEROKU = os.environ.get('ON_HEROKU')
+	'''ON_HEROKU = os.environ.get('ON_HEROKU')
 
 	port = None
 	if ON_HEROKU:
 	    # get the heroku port
 	    port = int(os.environ.get('PORT', 8745))  # as per OP comments default is 17995
 	else:
-	    port = 8745	
+	    port = 8745'''	
 	
-	print(port)	
+	#print(port)	
 
-	HOST, PORT = "localhost", port
+	HOST, PORT = "localhost", 8745
 
 	server = ThreadedTCPServer((HOST, PORT), TCPRequestHandler)
 	print("Server address - {}:{}".format(server.server_address[0],str(server.server_address[1])))
